@@ -1,0 +1,126 @@
+:root {
+    --primary-green: #28a745;
+    --light-green: #d4edda;
+    --dark-green: #218838;
+}
+
+body {
+    background-color: #f8f9fa;
+}
+
+.category-filter {
+    margin: 20px 0;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.category-filter a {
+    padding: 10px 20px;
+    margin-right: 5px;
+    color: #495057;
+    text-decoration: none;
+    border-radius: 5px 5px 0 0;
+    transition: all 0.3s;
+}
+
+.category-filter a.active {
+    background-color: var(--primary-green);
+    color: white;
+    font-weight: bold;
+}
+
+.category-filter a:hover:not(.active) {
+    background-color: #e9ecef;
+}
+
+.section-container {
+    display: none;
+}
+
+.section-container.active {
+    display: block;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.table-success {
+    background-color: var(--light-green);
+}
+
+.table-success thead th {
+    background-color: var(--primary-green);
+    color: white;
+}
+
+.btn-success {
+    background-color: var(--primary-green);
+    border-color: var(--primary-green);
+}
+
+.btn-success:hover {
+    background-color: var(--dark-green);
+    border-color: var(--dark-green);
+}
+
+.cart-total,
+.coupon-code {
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: white;
+}
+
+.cart-total h3,
+.coupon-code h3 {
+    color: var(--primary-green);
+    margin-bottom: 15px;
+}
+
+.product-remove a {
+    color: #dc3545;
+}
+
+.product-remove a:hover {
+    color: #c82333;
+}
+
+.quantity .btn-outline-secondary {
+    border-color: #ced4da;
+}
+
+.quantity .btn-outline-secondary:hover {
+    background-color: #e9ecef;
+}
+
+.img-product img {
+    max-width: 80px;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .category-filter {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .category-filter a {
+        margin-bottom: 5px;
+        border-radius: 5px;
+    }
+
+    .cart-wrap {
+        margin-bottom: 20px;
+    }
+
+    .table-responsive {
+        overflow-x: auto;
+    }
+}

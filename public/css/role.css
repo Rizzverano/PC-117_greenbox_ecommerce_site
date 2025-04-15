@@ -1,0 +1,99 @@
+#myNav {
+    background-color: hsl(96, 39%, 49%);
+    height: 60px;
+}
+
+#myH2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 10px 0;
+    color: hsl(0, 0%, 95%);
+}
+
+#roleSec {
+    font-weight: bold;
+    color: hsl(96, 39%, 49%);
+}
+
+#roleSec:hover {
+    color: hsl(96, 39%, 39%);
+}
+
+body {
+    background-color: hsl(0, 0%, 90%);
+    padding-bottom: 50px;
+}
+
+#myH1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: hsl(96, 39%, 49%);
+    margin: 25px 0;
+    text-align: center;
+}
+
+.task-card {
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    height: 100%;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    background-color: white;
+}
+
+.task-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.task-card h5 {
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: hsl(96, 39%, 30%);
+}
+
+.task-btn {
+    background-color: hsl(120, 100%, 45%);
+    border: none;
+    border-radius: 5px;
+    padding: 8px 20px;
+    color: white;
+    font-weight: bold;
+}
+
+.task-btn:hover {
+    background-color: hsl(96, 39%, 49%);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #myH1 {
+        font-size: 2rem;
+        margin: 20px 0;
+    }
+
+    .task-card {
+        padding: 15px;
+    }
+
+    .task-card h5 {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    #myH1 {
+        font-size: 1.8rem;
+    }
+
+    #myH2 {
+        font-size: 1.2rem;
+    }
+
+    .task-btn {
+        padding: 6px 15px;
+        font-size: 0.9rem;
+    }
+}

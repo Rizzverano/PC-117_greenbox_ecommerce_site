@@ -1,0 +1,37 @@
+ /* Custom CSS */
+ .mouse-icon {
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+#mouse{
+    border-radius: 20px;
+}
+
+.mouse-icon:hover {
+    transform: translateY(-5px);
+}
+
+.mouse-wheel {
+    transition: all 0.3s ease;
+}
+
+.mouse-icon:hover .mouse-wheel {
+    background-color: #28a745 !important;
+    box-shadow: 0 0 10px rgba(40, 167, 69, 0.5);
+}
+
+.footer-widget ul li a:hover {
+    color: #28a745 !important;
+    padding-left: 5px;
+    transition: all 0.3s ease;
+}
+
+.heading {
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.block-23 ul li a:hover {
+    color: #28a745 !important;
+}
