@@ -35,8 +35,8 @@ Route::middleware(['auth', 'role:1,2'])->group(function () {
 });
 
 // Public "show" routes
-Route::get('/vegefruits/{vegefruit}', [VegefruitController::class, 'show'])->name('vegefruits.show');
-Route::get('/meats/{meat}', [MeatController::class, 'show'])->name('meats.show');
-Route::get('/seafoods/{seafood}', [SeafoodController::class, 'show'])->name('seafoods.show');
+Route::get('/vegefruits/{vegefruit}', [VegefruitController::class, 'show'])->name('vegefruits.show')->middleware('auth');
+Route::get('/meats/{meat}', [MeatController::class, 'show'])->name('meats.show')->middleware('auth');
+Route::get('/seafoods/{seafood}', [SeafoodController::class, 'show'])->name('seafoods.show')->middleware('auth');
 
 
