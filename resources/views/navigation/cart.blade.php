@@ -1,12 +1,14 @@
 @extends('navlayout.layout')
 
 @section('content')
+
     @include('section.nav-top')
 
     @include('section.navbar')
 
+    @include('partials.cart-hero')
 
-    <div class="container py-4">
+    <div class="container py-4 mb-5">
         <!-- Category Filter Tabs -->
         <div class="category-filter nav nav-tabs" id="categoryTabs">
             <a class="nav-link active" href="#" data-target="cart-section">Cart</a>
@@ -208,6 +210,7 @@
                                     <td><span class="badge bg-success">Delivered</span></td>
                                     <td>
                                         <button class="btn btn-success btn-sm">View</button>
+                                        <button class="btn btn-primary btn-sm">Return</button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -217,4 +220,7 @@
             </div>
         </section>
     </div>
+
+    @include('section.services')
+
 @endsection

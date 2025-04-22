@@ -6,6 +6,8 @@
 
     @include('section.navbar')
 
+    @include('partials.bg-returns')
+
 <section class="returns-section">
     <div class="container mt-5">
         <div class="row">

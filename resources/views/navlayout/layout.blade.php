@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/contact.css">
     <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/cart-hero.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/bg-image.css">
     <link rel="icon" type="image/png" href="img/favicon.png">
 </head>
 <body>

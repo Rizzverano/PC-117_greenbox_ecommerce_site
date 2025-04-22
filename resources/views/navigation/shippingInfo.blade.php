@@ -6,15 +6,12 @@
 
     @include('section.navbar')
 
+    @include('partials.bg-shipping')
 
     <section class="py-5 bg-light">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <div class="heading-section-bold mb-5 text-center">
-                        <h2 class="mb-4 display-5 fw-bold" style="color: #28a745;">Shipping Information</h2>
-                        <div class="divider mx-auto bg-success" style="height: 3px; width: 80px;"></div>
-                    </div>
 
                     <div class="card shadow-sm border-0 p-4 p-md-5 bg-white rounded-3">
                         <div class="card-body">

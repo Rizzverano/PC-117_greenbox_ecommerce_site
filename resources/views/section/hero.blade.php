@@ -7,7 +7,7 @@
                     <a href="#shop">
                     <img src="img/vegesfruits.jpg" alt="Vegetables &amp; Fruits">
                     <div class="slide-content">
-                        <h2>Vegetables &amp; Fruits</h2>
+                        <h2 id="hed">Vegetables &amp; Fruits</h2>
                         <p>Choose your preferred choice.</p>
                     </div>
                     </a>
@@ -16,7 +16,7 @@
                     <a href="#shop">
                     <img src="img/meats.jpg" alt="Meats">
                     <div class="slide-content">
-                        <h2>Meats</h2>
+                        <h2 id="hed">Meats</h2>
                         <p>Choose your preferred choice.</p>
                     </div>
                     </a>
@@ -25,7 +25,7 @@
                     <a href="#shop">
                     <img src="img/seadfoods.jpg" alt="Seadfoods">
                     <div class="slide-content">
-                        <h2>Seafoods</h2>
+                        <h2 id="hed">Seafoods</h2>
                         <p>Choose your preferred choice.</p>
                     </div>
                     </a>

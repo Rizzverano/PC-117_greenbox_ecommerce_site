@@ -1,0 +1,156 @@
+:root {
+    --primary-color: #82ae46;
+    --text-color: #333333;
+    --light-bg: #f8f9fa;
+    --white: #ffffff;
+    --spacing-unit: 1rem;
+    --max-width: 1200px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/* Hero Section */
+.hero-bread {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.hero-bread::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.hero-container {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-unit);
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content {
+    text-align: center;
+    color: var(--white);
+}
+
+.breadcrumbs {
+    margin-bottom: var(--spacing-unit);
+    font-size: 0.9rem;
+}
+
+.breadcrumbs span {
+    margin-right: 0.5rem;
+}
+
+.breadcrumbs a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-unit);
+}
+
+/* About Section */
+.about-section {
+    background-color: var(--light-bg);
+    padding: 4rem 0;
+}
+
+.about-container {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-unit);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.about-image {
+    background-size: cover;
+    background-position: center;
+    min-height: 300px;
+    border-radius: 8px;
+}
+
+.about-content {
+    padding: 1rem;
+}
+
+.about-header h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+    line-height: 1.3;
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+}
+
+.shop-button {
+    display: inline-block;
+    background-color:  #82ae46;
+    color: white;
+    padding: 0.8rem 1.8rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.shop-button:hover {
+    background-color: #6d9639;
+}
+
+/* Responsive Layout */
+@media (min-width: 768px) {
+    .hero-bread {
+        height: 400px;
+    }
+
+    .hero-content h1 {
+        font-size: 3.5rem;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .about-image {
+        min-height: 500px;
+    }
+}
+
+@media (min-width: 992px) {
+    .about-content {
+        padding: 2rem;
+    }
+}

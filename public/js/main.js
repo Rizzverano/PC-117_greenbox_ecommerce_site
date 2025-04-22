@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let currentIndex = 0;
     const slideCount = slides.length;
-    const slideIntervalDuration = 2000; // 2 seconds
+    const slideIntervalDuration = 3000; // 3 seconds
 
     // Create dots
     for (let i = 0; i < slideCount; i++) {

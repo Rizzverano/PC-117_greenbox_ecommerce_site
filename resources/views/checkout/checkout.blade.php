@@ -6,6 +6,8 @@
 
     @include('section.navbar')
 
+    @include('partials.bg-checkout')
+
     <section class="section-checkout bg-light py-5">
         <div class="container">
             <div class="row justify-content-center">

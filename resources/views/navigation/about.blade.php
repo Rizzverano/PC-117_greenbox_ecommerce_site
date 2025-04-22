@@ -5,36 +5,35 @@
 
     @include('section.navbar')
 
-    <section class="py-5 bg-light">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <div class="heading-section-bold mb-4 mt-md-5">
-                        <div class="ml-md-0">
-                            <h2 class="mb-4 display-4 font-weight-bold text-success" style="font-weight: bold;">Welcome to
-                                GreenBox</h2>
-                            <p class="lead text-muted">Your eCommerce destination for fresh ingredients</p>
-                        </div>
+    <div class="hero-bread" style="background-image: url('img/vegesfruits.jpg')">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>About Us</h1>
+                <div class="divider mx-auto bg-white" style="height: 3px; width: 80px;"></div>
+            </div>
+        </div>
+    </div>
+
+    <section class="about-section">
+        <div class="about-container">
+            <div class="about-grid">
+                <div class="about-image" style="background-image: url(img/about.jpg);"></div>
+                <div class="about-content">
+                    <div class="about-header">
+                        <h2>Welcome to GreenBox an eCommerce website</h2>
                     </div>
-
-                    <div class="pb-md-5">
-                        <p class="mb-4 fs-5">Fresh, organic, and ready-to-cook ingredients—delivered straight to your
-                            kitchen in real time! At GreenBox, we take the hassle out of cooking by bringing you the finest
-                            farm-fresh produce and sustainably sourced proteins, so every meal starts with the best.</p>
-
-                        <p class="mb-4 fs-5">We work closely with local farmers and trusted suppliers to ensure top-quality
-                            ingredients in every delivery. Our real-time system keeps waste to a minimum and guarantees peak
-                            freshness, saving you time while keeping flavor at its best.</p>
-
-                        <p class="mb-5 fs-5">Committed to sustainability and healthy living, we make it easy to whip up
-                            delicious, wholesome meals with our eco-friendly approach and thoughtfully curated selections.
-                            Plus, enjoy free shipping on all items—because great food should come with no extra cost! And
-                            for your convenience, we offer easy Cash on Delivery—no upfront payments, just simple,
-                            hassle-free transactions when your order arrives.</p>
-
-                        <p class="mb-5 fs-5">Enjoy freshness, convenience, and quality—right at your doorstep with GreenBox!</p>
-
-                        <p><a href="{{ route('home') }}" class="btn btn-success btn-lg px-5 py-3 fs-5">Shop Now</a></p>
+                    <div class="about-text">
+                        <p><i class="fa-solid fa-leaf me-2" style="color: #28a745;"></i>GreenBox is your go-to source for fresh, organic, and ready-to-cook ingredients delivered in
+                            real-time. We make cooking easier by providing high-quality, farm-fresh produce and
+                            sustainably sourced proteins, ensuring every meal starts with the best ingredients.</p>
+                        <p><i class="fa-solid fa-leaf me-2" style="color: #28a745;"></i>By partnering with local farmers and trusted suppliers, we guarantee freshness and quality
+                            with every delivery. Our real-time system minimizes waste and ensures you get ingredients at
+                            their peak, saving you time and effort without compromising on taste.</p>
+                        <p><i class="fa-solid fa-leaf me-2" style="color: #28a745;"></i>At GreenBox, we're committed to sustainability and healthy living. With our eco-friendly
+                            approach and carefully curated selections, we help you cook delicious, wholesome meals
+                            effortlessly. Experience freshness, convenience, and quality—delivered straight to your
+                            door!</p>
+                        <p><a href="{{ route('home') }}" class="shop-button btn btn-success">Shop now</a></p>
                     </div>
                 </div>
             </div>

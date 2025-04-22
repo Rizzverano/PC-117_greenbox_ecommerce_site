@@ -2,16 +2,19 @@
     --primary-green: #28a745;
     --dark-green: #218838;
     --light-green: #d4edda;
-    --text-dark: #343a40;
+    --text-dark: #31A94E;
     --text-light: #f8f9fa;
 }
 
-#serve{
+#serve {
     text-align: center;
+    margin-bottom: 40px;
+    color: var(--text-dark);
+    font-weight: 700;
 }
 
 .services-section {
-    padding: 60px 0;
+    padding: 60px 15px;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
@@ -19,38 +22,53 @@
 }
 
 .services-list {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
     padding: 0;
-    list-style: none;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-link {
+    text-decoration: none;
+    display: block;
+    height: 100%;
 }
 
 .service-item {
     text-align: center;
     padding: 30px 20px;
-    width: 300px;
-    margin: 15px;
+    height: 100%;
     border-radius: 10px;
     transition: all 0.3s ease;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,0.05);
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .service-item:hover {
     background-color: var(--light-green);
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(40, 167, 69, 0.1);
+    border-color: rgba(40, 167, 69, 0.2);
 }
 
 .service-icon {
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: var(--primary-green);
     margin-bottom: 20px;
     background-color: var(--light-green);
-    width: 80px;
-    height: 80px;
-    line-height: 80px;
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
     border-radius: 50%;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     transition: all 0.3s ease;
 }
 
@@ -64,21 +82,52 @@
     color: var(--text-dark);
     font-weight: 600;
     margin-bottom: 10px;
+    font-size: 1.25rem;
 }
 
 .service-description {
     color: #6c757d;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .services-list {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .service-icon {
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+        font-size: 1.8rem;
+    }
 }
 
 @media (max-width: 768px) {
-    .services-list {
-        flex-direction: column;
-        align-items: center;
+    .services-section {
+        padding: 40px 15px;
     }
 
     .service-item {
-        width: 100%;
-        max-width: 350px;
+        padding: 25px 15px;
+    }
+
+    .service-title {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .services-list {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    #serve {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
     }
 }
