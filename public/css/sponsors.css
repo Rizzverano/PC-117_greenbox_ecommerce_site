@@ -1,0 +1,46 @@
+.instructor-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.instructor-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,100,0,0.1);
+}
+.social-icon {
+    color: #28a745;
+    transition: color 0.3s ease, transform 0.3s ease;
+    margin: 0 8px;
+    font-size: 1.2rem;
+}
+.social-icon:hover {
+    color: #218838;
+    transform: scale(1.2);
+}
+.section-title {
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+.section-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: rgba(255,255,255,0.5);
+}
+.instructor-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border: 3px solid #e9ecef;
+}
+@media (max-width: 768px) {
+    .instructor-card {
+        margin-bottom: 20px;
+    }
+}

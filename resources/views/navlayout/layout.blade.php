@@ -7,8 +7,7 @@
     <title>{{ config('app.name') }}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/703d23d85d.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/product.css">
+    <link rel="stylesheet" href="css/top-nav.css">
     <link rel="stylesheet" href="css/services.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/contact.css">
@@ -16,6 +15,8 @@
     <link rel="stylesheet" href="css/cart-hero.css">
     <link rel="stylesheet" href="css/about.css">
     <link rel="stylesheet" href="css/bg-image.css">
+    <link rel="stylesheet" href="css/sponsors.css">
+    <link rel="stylesheet" href="css/faq.css">
     <link rel="icon" type="image/png" href="img/favicon.png">
 </head>
 <body>

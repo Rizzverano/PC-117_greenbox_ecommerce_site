@@ -10,7 +10,7 @@
             <form action="{{ route('logout') }}" method="POST" class="d-inline">
                 @csrf
                 @method('POST')
-                <button class="btn btn-danger" type="submit">Logout</button>
+                <button class="btn btn-danger" type="submit"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
             </form>
         </div>
     </div>

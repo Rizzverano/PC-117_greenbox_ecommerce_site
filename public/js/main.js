@@ -1,69 +1,90 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const slider = document.getElementById('slider');
-    const slides = document.querySelectorAll('.slide');
-    const sliderDots = document.getElementById('sliderDots');
+    const sliderContainer = document.querySelector('.slider-container');
+    const slides = document.querySelectorAll('.slider-item');
+    const indicatorsContainer = document.querySelector('.slider-indicators');
 
-    let currentIndex = 0;
+    let currentSlide = 0;
     const slideCount = slides.length;
-    const slideIntervalDuration = 3000; // 3 seconds
+    let slideInterval;
+    const intervalTime = 5000; // 5 seconds
 
-    // Create dots
-    for (let i = 0; i < slideCount; i++) {
-        const dot = document.createElement('span');
-        dot.classList.add('dot');
-        if (i === 0) dot.classList.add('active');
-        dot.addEventListener('click', () => goToSlide(i));
-        sliderDots.appendChild(dot);
-    }
-
-    const dots = document.querySelectorAll('.dot');
-
-    // Update slider position
-    function updateSlider() {
-        slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-
-        // Update dots
-        dots.forEach((dot, index) => {
-            dot.classList.toggle('active', index === currentIndex);
+    // Initialize slider
+    function initSlider() {
+        // Create indicators
+        slides.forEach((slide, index) => {
+            const indicator = document.createElement('div');
+            indicator.classList.add('slider-indicator');
+            if (index === 0) indicator.classList.add('active');
+            indicator.addEventListener('click', () => goToSlide(index));
+            indicatorsContainer.appendChild(indicator);
         });
-    }
 
-    // Next slide
-    function nextSlide() {
-        currentIndex = (currentIndex + 1) % slideCount;
-        updateSlider();
-        resetInterval();
+        // Start auto slide
+        startAutoSlide();
     }
 
     // Go to specific slide
     function goToSlide(index) {
-        currentIndex = index;
-        updateSlider();
-        resetInterval();
+        slides[currentSlide].classList.remove('active');
+        document.querySelectorAll('.slider-indicator')[currentSlide].classList.remove('active');
+
+        currentSlide = (index + slideCount) % slideCount;
+
+        slides[currentSlide].classList.add('active');
+        document.querySelectorAll('.slider-indicator')[currentSlide].classList.add('active');
+
+        // Reset auto slide timer
+        resetAutoSlide();
     }
 
-    // Auto slide function
-    let slideInterval;
-    function startInterval() {
-        slideInterval = setInterval(nextSlide, slideIntervalDuration);
+    // Next slide
+    function nextSlide() {
+        goToSlide(currentSlide + 1);
     }
 
-    // Reset interval timer
-    function resetInterval() {
+    // Start auto slide
+    function startAutoSlide() {
+        slideInterval = setInterval(nextSlide, intervalTime);
+    }
+
+    // Reset auto slide timer
+    function resetAutoSlide() {
         clearInterval(slideInterval);
-        startInterval();
+        startAutoSlide();
     }
-
-    // Initialize auto-sliding
-    startInterval();
 
     // Pause on hover
-    const sliderContainer = document.querySelector('.slider-container');
     sliderContainer.addEventListener('mouseenter', () => {
         clearInterval(slideInterval);
     });
 
-    sliderContainer.addEventListener('mouseleave', () => {
-        startInterval();
-    });
+    sliderContainer.addEventListener('mouseleave', startAutoSlide);
+
+    // Touch events for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    sliderContainer.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        clearInterval(slideInterval);
+    }, {passive: true});
+
+    sliderContainer.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+        startAutoSlide();
+    }, {passive: true});
+
+    function handleSwipe() {
+        const threshold = 50;
+        if (touchEndX < touchStartX - threshold) {
+            nextSlide();
+        }
+        if (touchEndX > touchStartX + threshold) {
+            goToSlide(currentSlide - 1);
+        }
+    }
+
+    // Initialize the slider
+    initSlider();
 });

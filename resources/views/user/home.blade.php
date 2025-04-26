@@ -8,9 +8,10 @@
 
 @include('section.hero')
 
-@include('section.dishes')
-
 @include('section.services')
 
+@include('section.sponsors')
+
+@include('section.questions')
 
 @endsection

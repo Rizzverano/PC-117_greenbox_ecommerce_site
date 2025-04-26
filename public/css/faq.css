@@ -1,0 +1,11 @@
+/* Change active accordion button to green */
+.accordion-button:not(.collapsed) {
+    background-color: #31A94E; /* Bootstrap 5 green color */
+    color: white;
+}
+
+/* Change focus outline to green */
+.accordion-button:focus {
+    border-color: #31A94E;
+    box-shadow: 0 0 0 0.25rem rgba(40, 167, 70, 0.5);
+}

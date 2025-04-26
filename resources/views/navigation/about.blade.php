@@ -33,10 +33,15 @@
                             approach and carefully curated selections, we help you cook delicious, wholesome meals
                             effortlessly. Experience freshness, convenience, and quality—delivered straight to your
                             door!</p>
-                        <p><a href="{{ route('home') }}" class="shop-button btn btn-success">Shop now</a></p>
+                        <p><a href="{{ route('shop') }}" class="shop-button btn btn-success">Shop now</a></p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    @include('section.sponsors')
+
+    @include('section.questions')
+
 @endsection

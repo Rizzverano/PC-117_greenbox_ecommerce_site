@@ -9,7 +9,7 @@
     @include('partials.bg-checkout')
 
     <section class="section-checkout bg-light py-5">
-        <div class="container">
+        <div class="container mb-5">
             <div class="row justify-content-center">
                 <!-- Billing Details Column -->
                 <div class="col-lg-6 mb-4">
@@ -96,5 +96,7 @@
             </div>
         </div>
     </section>
+
+    @include('section.services')
 
 @endsection

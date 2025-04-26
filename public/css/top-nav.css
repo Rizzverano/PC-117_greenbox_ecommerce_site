@@ -1,0 +1,16 @@
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+#logo{
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+#logo:hover{
+    color: #202529;
+}
+
+.nav-link:hover{
+    color: #28a745;
+}

@@ -55,4 +55,9 @@ class DashboardController extends Controller
     {
         return view('navigation.returns');
     }
+
+    public function shop()
+    {
+        return view('navigation.shop');
+    }
 }

@@ -21,13 +21,14 @@ Route::get('/', [DashboardController::class, 'index'])
 Route::middleware(['auth', 'role:0'])->group(function () {
 
     Route::get('/home', [DashboardController::class, 'home'])->name('home');
-    Route::get('/about', [DashboardController::class, 'about'])->name('about');
-    Route::get('/terms-condition', [DashboardController::class, 'terms'])->name('terms-condition');
-    Route::get('/shippingInfo', [DashboardController::class, 'ship'])->name('shippingInfo');
-    Route::get('/privacy', [DashboardController::class, 'privacy'])->name('privacy');
-    Route::get('/contact', [DashboardController::class, 'contact'])->name('contact');
+    Route::get('/shop', [DashboardController::class, 'shop'])->name('shop');
     Route::get('/cart', [DashboardController::class, 'cart'])->name('cart');
     Route::get('/checkout', [DashboardController::class, 'checkout'])->name('checkout');
+    Route::get('/about', [DashboardController::class, 'about'])->name('about');
+    Route::get('/contact', [DashboardController::class, 'contact'])->name('contact');
+    Route::get('/shippingInfo', [DashboardController::class, 'ship'])->name('shippingInfo');
+    Route::get('/terms-condition', [DashboardController::class, 'terms'])->name('terms-condition');
+    Route::get('/privacy', [DashboardController::class, 'privacy'])->name('privacy');
     Route::get('/returns', [DashboardController::class, 'returns'])->name('returns');
 
 });

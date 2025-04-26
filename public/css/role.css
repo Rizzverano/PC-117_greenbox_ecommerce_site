@@ -1,99 +1,181 @@
-#myNav {
-    background-color: hsl(96, 39%, 49%);
-    height: 60px;
-}
-
-#myH2 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin: 10px 0;
-    color: hsl(0, 0%, 95%);
-}
-
-#roleSec {
-    font-weight: bold;
-    color: hsl(96, 39%, 49%);
-}
-
-#roleSec:hover {
-    color: hsl(96, 39%, 39%);
-}
-
+/* General Styles */
 body {
-    background-color: hsl(0, 0%, 90%);
-    padding-bottom: 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    padding-top: 120px;
+    min-height: 100vh;
 }
 
-#myH1 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: hsl(96, 39%, 49%);
-    margin: 25px 0;
-    text-align: center;
-}
-
-.task-card {
-    text-align: center;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    height: 100%;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    background-color: white;
-}
-
-.task-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-.task-card h5 {
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: hsl(96, 39%, 30%);
-}
-
-.task-btn {
-    background-color: hsl(120, 100%, 45%);
-    border: none;
-    border-radius: 5px;
-    padding: 8px 20px;
+/* Top Navigation */
+.top-nav {
+    background-color: #28a745;
     color: white;
-    font-weight: bold;
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.task-btn:hover {
-    background-color: hsl(96, 39%, 49%);
+.top-nav .btn {
+    padding: 5px 15px;
+    font-size: 0.9rem;
 }
 
-/* Responsive adjustments */
+/* Brand Navigation */
+.brand-nav {
+    background-color: #fff;
+    padding: 15px 0;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    z-index: 1020;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.brand-nav .navbar-brand {
+    color: #2c3e50;
+    font-size: 1.5rem;
+}
+
+/* Sidebar */
+.sidebar-container {
+    position: fixed;
+    top: 120px;
+    left: 0;
+    bottom: 0;
+    width: 250px;
+    z-index: 1010;
+    background-color: #fff;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.sidebar {
+    padding: 20px 0;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.sidebar-item {
+    padding: 12px 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: #495057;
+    transition: all 0.3s;
+    border-left: 4px solid transparent;
+}
+
+.sidebar-item:hover {
+    background-color: #f1f7ff;
+    color: #28a745;
+}
+
+.sidebar-item.active {
+    background-color: #e9f5ff;
+    color: #28a745;
+    border-left: 4px solid #28a745;
+}
+
+.sidebar-item i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    transition: margin 0.3s ease;
+}
+
+.content-area {
+    display: none;
+}
+
+.content-area.active {
+    display: block;
+}
+
+/* Dashboard Cards */
+.dashboard-card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 100%;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+/* Sidebar Toggle Button */
+.sidebar-toggle {
+    display: none;
+    position: fixed;
+    top: 70px;
+    left: 10px;
+    z-index: 1040;
+    background: #2c3e50;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .sidebar-container {
+        transform: translateX(-100%);
+    }
+
+    .sidebar-container.show {
+        transform: translateX(0);
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .sidebar-toggle {
+        display: block;
+    }
+}
+
 @media (max-width: 768px) {
-    #myH1 {
-        font-size: 2rem;
-        margin: 20px 0;
+    body {
+        padding-top: 110px;
     }
 
-    .task-card {
-        padding: 15px;
-    }
-
-    .task-card h5 {
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 576px) {
-    #myH1 {
-        font-size: 1.8rem;
-    }
-
-    #myH2 {
+    .top-nav h2 {
         font-size: 1.2rem;
     }
 
-    .task-btn {
-        padding: 6px 15px;
-        font-size: 0.9rem;
+    .brand-nav .navbar-brand {
+        font-size: 1.2rem;
+    }
+
+    .sidebar-container {
+        top: 110px;
+    }
+
+    .sidebar-toggle {
+        top: 65px;
     }
 }

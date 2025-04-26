@@ -1,6 +1,16 @@
+@extends('shoplayout.shoplayout')
+
+@section('content')
+
+@include('section.nav-top')
+
+@include('section.navbar')
+
+@include('partials.bg-shop')
+
 <!-- Dishes -->
 <div class="container py-5" id="shop">
-    <h2 class="text-center mb-4">Our Dishes</h2>
+    <h2 class="text-center mb-4">Greenbox <span class="text-dark">Menus</span></h2>
     <div class="search">
         <input type="text" placeholder="Search.."><span id="search" class="fa-solid fa-magnifying-glass"></span>
     </div>
@@ -15,7 +25,7 @@
     </div>
 
     <!-- Products Grid -->
-    <div class="row" id="products-container">
+    <div class="row g-4" id="products-container">
         @foreach ($vegefruits as $vegefruit)
             <!-- Veges & Fruits Dish -->
             <div class="col-md-4 col-sm-6 product-card" data-category="vegetables">
@@ -74,3 +84,7 @@
 @endforeach
 </div>
 </div>
+
+@include('section.services')
+
+@endsection

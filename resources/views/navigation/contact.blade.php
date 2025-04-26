@@ -78,4 +78,9 @@
             </div>
         </div>
     </section>
+
+    @include('section.sponsors')
+
+    @include('section.questions')
+
 @endsection

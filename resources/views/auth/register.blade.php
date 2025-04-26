@@ -9,7 +9,7 @@
                 <div class="card shadow-sm">
                     <div class="card-body p-4">
                         <div class="text-center mb-4">
-                            <h2 class="fw-bold">Register</h2>
+                            <h2 class="fw-bold text-white">Register</h2>
                         </div>
                         <form action="{{ route('register') }}" method="POST">
                             @csrf
@@ -61,7 +61,7 @@
                             </div>
                         </form>
                         <div class="text-center">
-                            <span class="text-muted">Already have an account?</span>
+                            <span class="text-white">Already have an account?</span>
                             <a href="/login" class="text-decoration-none">Login</a>
                         </div>
                     </div>
