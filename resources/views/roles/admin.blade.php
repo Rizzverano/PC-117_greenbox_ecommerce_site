@@ -12,8 +12,19 @@
     <!-- Dashboard Overview Content -->
     <div id="dashboard-content" class="content-area active">
         <!-- Your dashboard content here -->
-        <h2 class="mb-4">Notifications:</h2>
+        <h2 class="mb-4">Remove or Register Manager & Admin Account:</h2>
         <div class="row mb-4 g-4">
+            <div class="col-md-4">
+                <div class="card dashboard-card text-center p-4">
+                    <i class="fas fa-users-cog card-icon text-success"></i>
+                    <h3>Account Management</h3>
+                    <p>No such notification...</p>
+                    <button class="btn btn-outline-success">Go to section</button>
+                </div>
+            </div>
+
+            <h2 class="my-4">Notifications:</h2>
+
             <div class="col-md-4">
                 <div class="card dashboard-card text-center p-4">
                     <i class="fas fa-receipt card-icon text-success"></i>

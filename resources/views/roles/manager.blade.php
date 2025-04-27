@@ -46,7 +46,7 @@
                         <i class="fas fa-book card-icon text-success"></i>
                         <h3>Cooking Procedures</h3>
                         <p>Manage cooking procedures</p>
-                        <a href="#"><button class="btn btn-outline-success">Manage Procedures</button></a>
+                        <button class="btn btn-outline-success">Manage Procedures</button>
                     </div>
                 </div>
 

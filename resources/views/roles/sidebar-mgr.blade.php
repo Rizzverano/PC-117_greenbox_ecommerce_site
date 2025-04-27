@@ -11,6 +11,11 @@
                 <span>Customer Orders</span>
             </div>
 
+            <div class="sidebar-item" data-target="procedures-content">
+                <i class="fas fa-book"></i>
+                <span>Cooking Procedures</span>
+            </div>
+
             <div class="sidebar-item" data-target="returns-content">
                 <i class="fas fa-exchange-alt"></i>
                 <span>Returns & Exchange</span>
