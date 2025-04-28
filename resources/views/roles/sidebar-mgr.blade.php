@@ -6,6 +6,11 @@
                 <span>Dashboard Overview</span>
             </div>
 
+            <div class="sidebar-item" data-target="categories-content">
+                <i class="fas fa-list"></i>
+                <span>Dish Categories</span>
+            </div>
+
             <div class="sidebar-item" data-target="orders-content">
                 <i class="fas fa-clipboard-list"></i>
                 <span>Customer Orders</span>
