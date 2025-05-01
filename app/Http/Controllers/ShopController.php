@@ -36,7 +36,7 @@ class ShopController extends Controller
         $category = $request->input('category');
 
         $modelMap = [
-            'vegefruit' => VegeFruit::class,
+            'vegefruit' => Vegefruit::class,
             'meat' => Meat::class,
             'seafood' => Seafood::class,
         ];
