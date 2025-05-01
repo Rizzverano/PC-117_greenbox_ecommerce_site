@@ -1,4 +1,4 @@
-@extends('crud-layout.layout')
+@extends('dishes-layout.layout')
 @section('content')
     <div class="container-fluid">
         <div class="row justify-content-center">

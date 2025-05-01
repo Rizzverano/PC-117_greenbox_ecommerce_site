@@ -16,7 +16,7 @@ class MeatController extends Controller
 
     public function index(): View
     {
-        $meats = Meat::latest()->paginate(5);
+        $meats = Meat::latest()->paginate(10);
         return view('meats.index', compact('meats'));
     }
 

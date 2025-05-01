@@ -41,11 +41,6 @@ class DashboardController extends Controller
         return view('navigation.contact');
     }
 
-    public function cart()
-    {
-        return view('navigation.cart');
-    }
-
     public function checkout()
     {
         return view('checkout.checkout');
@@ -56,8 +51,4 @@ class DashboardController extends Controller
         return view('navigation.returns');
     }
 
-    public function shop()
-    {
-        return view('navigation.shop');
-    }
 }

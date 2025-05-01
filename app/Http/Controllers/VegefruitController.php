@@ -16,7 +16,7 @@ class VegefruitController extends Controller
 
     public function index(): View
     {
-        $vegefruits = Vegefruit::latest()->paginate(5);
+        $vegefruits = Vegefruit::latest()->paginate(10);
         return view('vegefruits.index', compact('vegefruits'));
     }
 

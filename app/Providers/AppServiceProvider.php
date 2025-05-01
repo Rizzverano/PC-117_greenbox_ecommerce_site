@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Models\Meat;
 use App\Models\Seafood;
 use App\Models\Vegefruit;
+use App\Models\CartItem;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -36,6 +37,11 @@ class AppServiceProvider extends ServiceProvider
         View::composer('*', function ($view) {
             $seafoods = Seafood::all();
             $view->with('seafoods', $seafoods);
+        });
+
+        View::composer('*', function ($view) {
+            $cart = CartItem::all();
+            $view->with('cart_items', $cart);
         });
     }
 }

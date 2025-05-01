@@ -33,36 +33,41 @@
                                     <th>Cooking guide</th>
                                 </tr>
                             </thead>
+
                             <tbody>
-                                <tr class="text-center align-middle">
-                                    <td class="product-remove">
-                                        <a href="#"><i class="fas fa-times"></i></a>
-                                    </td>
-                                    <td class="img-product">
-                                        <img src="img/calamari.jpg" alt="product-img" class="img-fluid">
-                                    </td>
-                                    <td class="product-name">
-                                        <h5>Calamari</h5>
-                                    </td>
-                                    <td class="price">$200.00</td>
-                                    <td class="quantity">
-                                        <div class="input-group justify-content-center">
-                                            <button class="btn btn-outline-secondary quantity-left-minus"
-                                                type="button">-</button>
-                                            <input type="text" name="quantity"
-                                                class="quantity form-control input-number text-center" value="1"
-                                                min="1" max="100" style="max-width: 50px;">
-                                            <button class="btn btn-outline-secondary quantity-right-plus"
-                                                type="button">+</button>
-                                        </div>
-                                    </td>
-                                    <td class="total">$200.00</td>
-                                    <td>
-                                        <button class="btn btn-success btn-sm">View</button>
-                                        <button class="btn btn-primary btn-sm">Download</button>
-                                    </td>
-                                </tr>
-                                <!-- Additional cart items can be added here -->
+                            @forelse ($cart as $item)
+                            <tr class="text-center align-middle" data-key="{{ $item['type'] . '_' . $item['id'] }}">
+                                <td class="product-remove">
+                                    <a href="#"><i class="fas fa-times"></i></a>
+                                </td>
+                                <td class="img-product">
+                                    <img src="{{ asset('storage/' . $item['image']) }}" alt="{{ $item['name'] }}" class="img-fluid" style="max-width: 70px;">
+                                </td>
+                                <td class="product-name">
+                                    <h5>{{ $item['name'] }}</h5>
+                                </td>
+                                <td class="price">₱{{ $item['price'] }}</td>
+                                <td class="quantity">
+                                    <div class="input-group justify-content-center">
+                                        <button class="btn btn-outline-secondary quantity-left-minus" type="button">-</button>
+                                        <input type="text" name="quantity" class="quantity form-control input-number text-center" value="{{ $item['quantity'] }}" min="1" max="100" style="max-width: 50px;">
+                                        <button class="btn btn-outline-secondary quantity-right-plus" type="button">+</button>
+                                    </div>
+                                </td>
+                                <td class="total">₱{{ $item['quantity'] * $item['price'] }}</td>
+                                <td>
+                                    <button class="btn btn-success btn-sm">View</button>
+                                    <button class="btn btn-primary btn-sm">Download</button>
+                                </td>
+                            </tr>
+                            @empty
+                            <tr>
+                                <td colspan="7" class="text-center">Your cart is empty.</td>
+                            </tr>
+                            <tr id="empty-cart-row" style="display: none;">
+                                <td colspan="7" class="text-center">Your cart is empty.</td>
+                            </tr>
+                            @endforelse
                             </tbody>
                         </table>
                     </div>
@@ -88,18 +93,24 @@
                 <div class="col-lg-6 mt-4 cart-wrap">
                     <div class="cart-total mb-3">
                         <h3>Cart Totals</h3>
+                        @php
+                        $subtotal = collect($cart)->sum(fn($item) => $item['price'] * $item['quantity']);
+                        $discount = 15; // Static for now
+                        $grandTotal = $subtotal - $discount;
+                        @endphp
+
                         <p class="d-flex justify-content-between">
                             <span>Subtotal</span>
-                            <span class="cart-subtotal">$200.00</span>
+                            <span class="cart-subtotal">₱{{ number_format($subtotal, 2) }}</span>
                         </p>
                         <p class="d-flex justify-content-between">
                             <span>Discount</span>
-                            <span>$15.00</span>
+                            <span>₱{{ number_format($discount, 2) }}</span>
                         </p>
                         <hr>
                         <p class="d-flex justify-content-between total-price">
                             <span>Total</span>
-                            <span class="cart-grand-total fw-bold">$185.00</span>
+                            <span class="cart-grand-total fw-bold">₱{{ number_format($grandTotal, 2) }}</span>
                         </p>
                     </div>
                     <div class="d-grid">

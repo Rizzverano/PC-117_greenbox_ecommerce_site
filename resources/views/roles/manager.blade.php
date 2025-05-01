@@ -1,4 +1,4 @@
-@extends('roles.admgrlayout')
+@extends('roles.admgr-layout')
 
 @section('title', 'Ingredients Management System')
 

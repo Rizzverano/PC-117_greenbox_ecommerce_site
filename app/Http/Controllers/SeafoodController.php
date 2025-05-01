@@ -16,7 +16,7 @@ class SeafoodController extends Controller
 
     public function index(): View
     {
-        $seafoods = Seafood::latest()->paginate(5);
+        $seafoods = Seafood::latest()->paginate(10);
         return view('seafoods.index', compact('seafoods'));
     }
 
