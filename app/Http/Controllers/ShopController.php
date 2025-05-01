@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\VegeFruit;
+use App\Models\Vegefruit;
 use App\Models\Meat;
 use App\Models\Seafood;
 
@@ -13,7 +13,7 @@ class ShopController extends Controller
     {
         $search = $request->input('search');
 
-        $vegefruits = VegeFruit::when($search, function ($query, $search) {
+        $vegefruits = Vegefruit::when($search, function ($query, $search) {
             return $query->where('name', 'like', "%{$search}%");
         })->get();
 
