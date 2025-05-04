@@ -29,4 +29,4 @@
     <div class="slider-dots"></div>
 </section>
 
-<script src="js/cart-hero.js"></script>
+<script src="{{ asset('js/cart-hero.js') }}"></script>

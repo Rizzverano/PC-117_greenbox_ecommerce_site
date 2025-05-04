@@ -19,24 +19,34 @@ class RoleController extends Controller
     public function loadAdminSection(Request $request)
     {
         $section = $request->input('section');
-        $validSections = ['account-content', 'transaction-content'];
 
-        if (!in_array($section, $validSections)) {
+        $validSections = [
+            'account-content'     => 'account',
+            'transaction-content' => 'transaction',
+        ];
+
+        if (!array_key_exists($section, $validSections)) {
             abort(404);
         }
 
-        return view("admin.sections.".str_replace('-content', '', $section));
+        return view("admin.sections." . $validSections[$section]);
     }
 
     public function loadManagerSection(Request $request)
     {
         $section = $request->input('section');
-        $validSections = ['categories-content', 'orders-content', 'procedures-content', 'returns-content'];
 
-        if (!in_array($section, $validSections)) {
+        $validSections = [
+            'categories-content' => 'categories',
+            'orders-content'     => 'orders',
+            'procedures-content' => 'procedures',
+            'returns-content'    => 'returns',
+        ];
+
+        if (!array_key_exists($section, $validSections)) {
             abort(404);
         }
 
-        return view("manager.sections.".str_replace('-content', '', $section));
+        return view("manager.sections." . $validSections[$section]);
     }
 }

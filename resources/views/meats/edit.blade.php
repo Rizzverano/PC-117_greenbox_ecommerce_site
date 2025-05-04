@@ -24,7 +24,8 @@
 
                                     <div class="mb-3">
                                         <label class="form-label fw-bold">Current Image</label>
-                                        <div class="border p-2 text-center" style="border-radius: 8px; background-color: #f8f9fa;">
+                                        <div class="border p-2 text-center"
+                                            style="border-radius: 8px; background-color: #f8f9fa;">
                                             <img src="{{ asset('storage/' . $meat->image) }}" alt="Current Image"
                                                 style="max-height: 100px; width: auto; border-radius: 5px;">
                                         </div>
@@ -32,8 +33,8 @@
 
                                     <div class="mb-3">
                                         <label class="form-label fw-bold">Update Image</label>
-                                        <input type="file" name="image" id="image"
-                                            class="form-control" style="border-radius: 8px;">
+                                        <input type="file" name="image" id="image" class="form-control"
+                                            style="border-radius: 8px;">
                                     </div>
 
                                     <div class="mb-3">
@@ -44,8 +45,9 @@
 
                                     <div class="mb-3">
                                         <label class="form-label fw-bold">Description</label>
-                                        <input type="text" name="description" id="description" value="{{ $meat->description }}"
-                                            class="form-control" style="border-radius: 8px;">
+                                        <input type="text" name="description" id="description"
+                                            value="{{ $meat->description }}" class="form-control"
+                                            style="border-radius: 8px;">
                                     </div>
                                 </div>
 
@@ -53,23 +55,29 @@
                                 <div class="col-md-6">
                                     <h5 class="mb-3" style="color: #28a745;">Ingredients</h5>
 
-                                    @for($i = 1; $i <= 5; $i++)
-                                        @php $ingred = 'ingred_' . ($i < 10 ? '0'.$i : $i); @endphp
-                                        <div class="mb-3">
-                                            <label class="form-label">Ingredient {{ $i }}</label>
-                                            <input type="text" name="{{ $ingred }}" id="{{ $ingred }}"
-                                                value="{{ $meat->$ingred }}" class="form-control" style="border-radius: 8px;">
-                                        </div>
-                                    @endfor
+                                    @php
+                                        $ingredients = [
+                                            'ingred_one',
+                                            'ingred_two',
+                                            'ingred_three',
+                                            'ingred_four',
+                                            'ingred_five',
+                                            'ingred_six',
+                                            'ingred_seven',
+                                            'ingred_eight',
+                                            'ingred_nine',
+                                            'ingred_ten',
+                                        ];
+                                    @endphp
 
-                                    @for($i = 6; $i <= 10; $i++)
-                                        @php $ingred = 'ingred_' . ($i < 10 ? '0'.$i : $i); @endphp
+                                    @foreach ($ingredients as $index => $ingred)
                                         <div class="mb-3">
-                                            <label class="form-label">Ingredient {{ $i }}</label>
+                                            <label class="form-label">Ingredient {{ $index + 1 }}</label>
                                             <input type="text" name="{{ $ingred }}" id="{{ $ingred }}"
-                                                value="{{ $meat->$ingred }}" class="form-control" style="border-radius: 8px;">
+                                                value="{{ old($ingred, $meat->$ingred) }}"
+                                                class="form-control form-control-sm" style="border-radius: 8px;">
                                         </div>
-                                    @endfor
+                                    @endforeach
 
                                     <div class="mb-3">
                                         <label class="form-label fw-bold">Price</label>
@@ -80,11 +88,13 @@
                             </div>
 
                             <div class="d-flex flex-wrap gap-3 mt-4">
-                                <button type="submit" class="btn btn-success px-4 py-2 flex-grow-1" style="min-width: 120px; border-radius: 8px;">
+                                <button type="submit" class="btn btn-success px-4 py-2 flex-grow-1"
+                                    style="min-width: 120px; border-radius: 8px;">
                                     <i class="fas fa-save me-2"></i>Update
                                 </button>
 
-                                <a href="{{ route('meats.index') }}" class="btn btn-outline-success px-4 py-2 flex-grow-1" style="min-width: 120px; border-radius: 8px;">
+                                <a href="{{ route('meats.index') }}" class="btn btn-outline-success px-4 py-2 flex-grow-1"
+                                    style="min-width: 120px; border-radius: 8px;">
                                     <i class="fas fa-arrow-left me-2"></i>Go Back
                                 </a>
                             </div>

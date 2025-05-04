@@ -15,7 +15,8 @@
                                 <div class="col-md-5 col-lg-4">
                                     <div class="text-center p-3" style="background-color: #f8f9fa; border-radius: 10px;">
                                         <img src="{{ asset('storage/' . $vegefruit->image) }}" alt="{{ $vegefruit->name }}"
-                                            class="img-fluid rounded shadow" style="max-height: 300px; width: auto; object-fit: contain;">
+                                            class="img-fluid rounded shadow"
+                                            style="max-height: 300px; width: auto; object-fit: contain;">
                                         <div class="mt-3">
                                             <h4 class="text-success m-0">₱{{ number_format($vegefruit->price, 2) }}</h4>
                                         </div>
@@ -32,12 +33,29 @@
                                     <div class="p-3" style="background-color: #f8f9fa; border-radius: 10px;">
                                         <h5 class="border-bottom pb-2 mb-3" style="color: #28a745;">Ingredients</h5>
                                         <div class="row row-cols-1 row-cols-sm-2 g-2">
-                                            @foreach (['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'] as $num)
-                                                @if (!empty($vegefruit->{'ingred_' . $num}))
+                                            @php
+                                                $ingredients = [
+                                                    'ingred_one',
+                                                    'ingred_two',
+                                                    'ingred_three',
+                                                    'ingred_four',
+                                                    'ingred_five',
+                                                    'ingred_six',
+                                                    'ingred_seven',
+                                                    'ingred_eight',
+                                                    'ingred_nine',
+                                                    'ingred_ten',
+                                                ];
+                                            @endphp
+
+                                            @foreach ($ingredients as $ingred)
+                                                @if (!empty($vegefruit->$ingred))
                                                     <div class="col">
-                                                        <div class="d-flex align-items-center p-2" style="background-color: white; border-radius: 5px;">
-                                                            <i class="fas fa-circle me-2" style="color: #28a745; font-size: 0.5rem;"></i>
-                                                            <span>{{ $vegefruit->{'ingred_' . $num} }}</span>
+                                                        <div class="d-flex align-items-center p-2"
+                                                            style="background-color: white; border-radius: 5px;">
+                                                            <i class="fas fa-circle me-2"
+                                                                style="color: #28a745; font-size: 0.5rem;"></i>
+                                                            <span>{{ $vegefruit->$ingred }}</span>
                                                         </div>
                                                     </div>
                                                 @endif
@@ -49,19 +67,23 @@
 
                             <div class="d-flex flex-wrap gap-3 mt-4">
                                 @if (auth()->check() && auth()->user()->role_id == 0)
-                                <a href="#" class="btn btn-success px-4 py-2 flex-grow-1" style="min-width: 120px;">
-                                    <i class="fas fa-cart-plus me-2"></i>Add to Cart
-                                </a>
+                                    <a href="#" id="addToCartBtn" class="btn btn-success px-4 py-2 flex-grow-1"
+                                        data-id="{{ $vegefruit->id }}" data-name="{{ $vegefruit->name }}"
+                                        data-type="vegefruit" style="min-width: 120px;">
+                                        <i class="fas fa-cart-plus me-2"></i>Add to Cart
+                                    </a>
                                 @endif
                                 @if (auth()->check() && auth()->user()->role_id == 0)
-                                <a href="{{ route('shop') }}" class="btn btn-outline-success px-4 py-2 flex-grow-1" style="min-width: 120px;">
-                                    <i class="fas fa-arrow-left me-2"></i>Go Back
-                                </a>
+                                    <a href="{{ route('shop') }}" class="btn btn-outline-success px-4 py-2 flex-grow-1"
+                                        style="min-width: 120px;">
+                                        <i class="fas fa-arrow-left me-2"></i>Go Back
+                                    </a>
                                 @endif
                                 @if (auth()->check() && auth()->user()->role_id == 2 && 1)
-                                <a href="{{ route('vegefruits.index') }}" class="btn btn-outline-success px-4 py-2 flex-grow-1" style="min-width: 120px;">
-                                    <i class="fas fa-arrow-left me-2"></i>Go Back
-                                </a>
+                                    <a href="{{ route('vegefruits.index') }}"
+                                        class="btn btn-outline-success px-4 py-2 flex-grow-1" style="min-width: 120px;">
+                                        <i class="fas fa-arrow-left me-2"></i>Go Back
+                                    </a>
                                 @endif
                             </div>
                         @else

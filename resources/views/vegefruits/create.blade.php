@@ -26,22 +26,26 @@
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label class="form-label fw-bold">Name</label>
-                                        <input type="text" name="name" id="name" class="form-control" style="border-radius: 8px;">
+                                        <input type="text" name="name" id="name" class="form-control"
+                                            style="border-radius: 8px;">
                                     </div>
 
                                     <div class="mb-3">
                                         <label class="form-label fw-bold">Image</label>
-                                        <input type="file" name="image" id="image" class="form-control" style="border-radius: 8px;">
+                                        <input type="file" name="image" id="image" class="form-control"
+                                            style="border-radius: 8px;">
                                     </div>
 
                                     <div class="mb-3">
                                         <label class="form-label fw-bold">Intro</label>
-                                        <input type="text" name="intro" id="intro" class="form-control" style="border-radius: 8px;">
+                                        <input type="text" name="intro" id="intro" class="form-control"
+                                            style="border-radius: 8px;">
                                     </div>
 
                                     <div class="mb-3">
                                         <label class="form-label fw-bold">Description</label>
-                                        <input type="text" name="description" id="description" class="form-control" style="border-radius: 8px;">
+                                        <input type="text" name="description" id="description" class="form-control"
+                                            style="border-radius: 8px;">
                                     </div>
                                 </div>
 
@@ -49,27 +53,45 @@
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label class="form-label fw-bold">Price</label>
-                                        <input type="number" name="price" id="price" class="form-control" style="border-radius: 8px;">
+                                        <input type="number" name="price" id="price" class="form-control"
+                                            style="border-radius: 8px;">
                                     </div>
 
                                     <h5 class="mt-2 mb-3" style="color: #28a745;">Ingredients</h5>
 
-                                    @for ($i = 1; $i <= 10; $i++)
-                                        @php $ingred = 'ingred_'.($i < 10 ? '0'.$i : $i); @endphp
-                                        <div class="mb-2">
-                                            <label class="form-label">Ingredient {{ $i }}</label>
-                                            <input type="text" name="{{ $ingred }}" id="{{ $ingred }}" class="form-control form-control-sm" style="border-radius: 6px;">
-                                        </div>
-                                    @endfor
+                                    @php
+                                        $ingredients = [
+                                            'ingred_one',
+                                            'ingred_two',
+                                            'ingred_three',
+                                            'ingred_four',
+                                            'ingred_five',
+                                            'ingred_six',
+                                            'ingred_seven',
+                                            'ingred_eight',
+                                            'ingred_nine',
+                                            'ingred_ten',
+                                        ];
+                                    @endphp
+
+                                    @foreach ($ingredients as $index => $ingred)
+                                        <label for="{{ $ingred }}" class="form-label mt-2">Ingredient
+                                            {{ $index + 1 }}</label>
+                                        <input type="text" name="{{ $ingred }}" id="{{ $ingred }}"
+                                            class="form-control form-control-sm rounded-2" value="{{ old($ingred) }}">
+                                    @endforeach
                                 </div>
                             </div>
 
                             <div class="d-flex flex-wrap gap-3 mt-4">
-                                <button type="submit" class="btn btn-success px-4 py-2 flex-grow-1" style="min-width: 120px; border-radius: 8px;">
+                                <button type="submit" class="btn btn-success px-4 py-2 flex-grow-1"
+                                    style="min-width: 120px; border-radius: 8px;">
                                     <i class="fas fa-save me-2"></i>Save
                                 </button>
 
-                                <a href="{{ route('vegefruits.index') }}" class="btn btn-outline-success px-4 py-2 flex-grow-1" style="min-width: 120px; border-radius: 8px;">
+                                <a href="{{ route('vegefruits.index') }}"
+                                    class="btn btn-outline-success px-4 py-2 flex-grow-1"
+                                    style="min-width: 120px; border-radius: 8px;">
                                     <i class="fas fa-arrow-left me-2"></i>Go Back
                                 </a>
                             </div>

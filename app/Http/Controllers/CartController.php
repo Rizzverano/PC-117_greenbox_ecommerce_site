@@ -38,7 +38,11 @@ class CartController extends Controller
             );
 
             $cartItem->increment('quantity');
-            return response()->json(['message' => 'Added to cart (DB)']);
+            return response()->json([
+                'success' => true,
+                'message' => 'Added to cart (DB)'
+            ]);
+
         }
 
         $cart = session()->get('cart', []);
@@ -53,7 +57,12 @@ class CartController extends Controller
 
         session()->put('cart', $cart);
 
-        return response()->json(['message' => 'Added to cart (session)', 'cart' => $cart]);
+        return response()->json([
+            'success' => true,
+            'message' => 'Added to cart (session)',
+            'cart' => $cart
+        ]);
+
     }
 
     public function updateQuantity(Request $request)

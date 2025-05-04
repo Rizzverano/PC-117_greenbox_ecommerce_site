@@ -60,6 +60,8 @@ class VegefruitController extends Controller
 
     public function show(Vegefruit $vegefruit): View
     {
+        // dd($vegefruit);
+
         return view('vegefruits.show', compact('vegefruit'));
     }
 
