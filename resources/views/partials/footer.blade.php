@@ -20,6 +20,7 @@
                     <ul class="list-inline mt-4">
                         <li class="list-inline-item"><a href="#" class="text-white"><span class="fa-brands fa-twitter fa-lg"></span></a></li>
                         <li class="list-inline-item"><a href="#" class="text-white"><span class="fa-brands fa-facebook fa-lg"></span></a></li>
+                        <li class="list-inline-item"><a href="#" class="text-white"><span class="fa-brands fa-linkedin fa-lg"></span></a></li>
                         <li class="list-inline-item"><a href="#" class="text-white"><span class="fa-brands fa-instagram fa-lg"></span></a></li>
                     </ul>
                 </div>

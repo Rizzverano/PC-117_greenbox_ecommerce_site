@@ -8,9 +8,12 @@
                <div class="container">
                    <div class="row justify-content-center align-items-center text-center">
                        <div class="col-12">
-                           <h1 class="display-4 mb-3 text-white"><b>We serve Fresh Ingredients Vegetables, Fruits,
-                                   Seafoods, & Meats</b></h1>
-                           <p class="lead mb-4 text-white">We deliver fresh ready-to-cook meal!</p>
+                        <h1 style="color: #fff; text-shadow: 2px 2px 4px #000; font-size: 2.5rem; margin-bottom: 1rem;">
+                            <b>We serve Fresh Ingredients Vegetables, Fruits, Seafoods, & Meats</b>
+                        </h1>
+                        <p style="color: #fff; text-shadow: 1px 1px 3px #000; font-size: 1.25rem; margin-bottom: 1.5rem;">
+                            We deliver fresh ready-to-cook meal!
+                        </p>
                        </div>
                    </div>
                </div>
@@ -24,8 +27,12 @@
                <div class="container">
                    <div class="row justify-content-center align-items-center text-center">
                        <div class="col-12">
-                           <h1 class="display-4 mb-3 text-white"><b>100% Fresh &amp; Organic Foods</b></h1>
-                           <p class="lead mb-4 text-white">We deliver fresh ready-to-cook meal!</p>
+                        <h1 style="color: #fff; text-shadow: 2px 2px 4px #000; font-size: 2.5rem; margin-bottom: 1rem;">
+                            <b>100% Fresh &amp; Organic Foods</b>
+                        </h1>
+                        <p style="color: #fff; text-shadow: 1px 1px 3px #000; font-size: 1.25rem; margin-bottom: 1.5rem;">
+                            We deliver fresh ready-to-cook meal!
+                        </p>
                        </div>
                    </div>
                </div>
@@ -39,9 +46,12 @@
                <div class="container">
                    <div class="row justify-content-center align-items-center text-center">
                        <div class="col-12">
-                           <h1 class="display-4 mb-3 text-white"><b>GreenBox is Your Fridge's Coolest New Best
-                                   Friend!</b></h1>
-                           <p class="lead mb-4 text-white">We deliver fresh ready-to-cook meal!</p>
+                        <h1 style="color: #fff; text-shadow: 2px 2px 4px #000; font-size: 2.5rem; margin-bottom: 1rem;">
+                            <b>GreenBox is Your Fridge's Coolest New Best Friend!</b>
+                        </h1>
+                        <p style="color: #fff; text-shadow: 1px 1px 3px #000; font-size: 1.25rem; margin-bottom: 1.5rem;">
+                            We deliver fresh ready-to-cook meal!
+                        </p>
                        </div>
                    </div>
                </div>

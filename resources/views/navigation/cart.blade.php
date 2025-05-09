@@ -25,12 +25,11 @@
                             <thead>
                                 <tr class="text-center">
                                     <th>&nbsp;</th>
-                                    <th>&nbsp;</th>
-                                    <th>Product name</th>
+                                    <th>Dish Image</th>
+                                    <th>Dish Name</th>
                                     <th>Price</th>
                                     <th>Quantity</th>
                                     <th>Total</th>
-                                    <th>Cooking guide</th>
                                 </tr>
                             </thead>
 
@@ -48,17 +47,13 @@
                                 </td>
                                 <td class="price">₱{{ $item['price'] }}</td>
                                 <td class="quantity">
-                                    <div class="input-group justify-content-center">
+                                    <div class="input-group input-group-sm justify-content-center flex-nowrap">
                                         <button class="btn btn-outline-secondary quantity-left-minus" type="button">-</button>
-                                        <input type="text" name="quantity" class="quantity form-control input-number text-center" value="{{ $item['quantity'] }}" min="1" max="100" style="max-width: 50px;">
+                                        <input type="text" name="quantity" class="quantity form-control input-number text-center" value="{{ $item['quantity'] }}" min="1" max="100" style="max-width: 50px; min-width: 50px;">
                                         <button class="btn btn-outline-secondary quantity-right-plus" type="button">+</button>
                                     </div>
                                 </td>
                                 <td class="total">₱{{ $item['quantity'] * $item['price'] }}</td>
-                                <td>
-                                    <button class="btn btn-success btn-sm">View</button>
-                                    <button class="btn btn-primary btn-sm">Download</button>
-                                </td>
                             </tr>
                             @empty
                             <tr>
@@ -145,8 +140,8 @@
                                     </td>
                                     <td>$850.00</td>
                                     <td>
-                                        <button class="btn btn-sm btn-success">Reorder</button>
-                                        <button class="btn btn-sm btn-outline-success">Details</button>
+                                        <button class="btn btn-sm btn-success my-2">Reorder</button>
+                                        <button class="btn btn-sm btn-outline-success my-2">Details</button>
                                     </td>
                                 </tr>
                                 <tr class="text-center align-middle">
@@ -157,8 +152,8 @@
                                     </td>
                                     <td>$500.00</td>
                                     <td>
-                                        <button class="btn btn-sm btn-success">Reorder</button>
-                                        <button class="btn btn-sm btn-outline-success">Details</button>
+                                        <button class="btn btn-sm btn-success my-2">Reorder</button>
+                                        <button class="btn btn-sm btn-outline-success my-2">Details</button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -196,8 +191,8 @@
                                     <td>3</td>
                                     <td>$850.00</td>
                                     <td><span class="badge bg-warning text-dark">Pending</span></td>
-                                    <td><button class="btn btn-success btn-sm">View</button>
-                                        <button class="btn btn-danger btn-sm">Cancel</button>
+                                    <td><button class="btn btn-success btn-sm my-2">View</button>
+                                        <button class="btn btn-danger btn-sm my-2">Cancel</button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -208,8 +203,8 @@
                                     <td>$200.00</td>
                                     <td><span class="badge bg-primary">Processing</span></td>
                                     <td>
-                                        <button class="btn btn-success btn-sm">View</button>
-                                        <button class="btn btn-danger btn-sm">Cancel</button>
+                                        <button class="btn btn-success btn-sm my-2">View</button>
+                                        <button class="btn btn-danger btn-sm my-2">Cancel</button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -220,8 +215,9 @@
                                     <td>$500.00</td>
                                     <td><span class="badge bg-success">Delivered</span></td>
                                     <td>
-                                        <button class="btn btn-success btn-sm">View</button>
-                                        <button class="btn btn-primary btn-sm">Return</button>
+                                        <button class="btn btn-success btn-sm my-2">View</button>
+                                        <button class="btn btn-primary btn-sm my-2">Return</button>
+                                        <button class="btn btn-info btn-sm my-2">Procedures</button>
                                     </td>
                                 </tr>
                             </tbody>

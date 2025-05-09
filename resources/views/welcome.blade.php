@@ -6,7 +6,7 @@
         <div class="container">
             <span class="nav-brand" style="font-weight: bold; color: white;">Please Login or Register to Access Content</span>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+            <button class="navbar-toggler my-2" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
                 <span class="navbar-toggler-icon"></span>
             </button>
 

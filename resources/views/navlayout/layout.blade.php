@@ -36,16 +36,19 @@
 
 
     <script src="{{ asset('js/loader.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
         integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
     </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        $(function () {
+        $(function() {
             const csrfToken = $('meta[name="csrf-token"]').attr('content');
 
             // Tab navigation
-            $('.category-filter a').on('click', function (e) {
+            $('.category-filter a').on('click', function(e) {
                 e.preventDefault();
                 const target = $(this).data('target');
                 $('.category-filter a, .section-container').removeClass('active');
@@ -62,21 +65,21 @@
 
             function initializeCart() {
                 // Quantity - / +
-                $('.quantity-left-minus').on('click', function () {
+                $('.quantity-left-minus').on('click', function() {
                     const input = $(this).siblings('input');
                     let value = Math.max(parseInt(input.val()) - 1, parseInt(input.attr('min') || 1));
                     input.val(value);
                     updateQuantity($(this).closest('tr'));
                 });
 
-                $('.quantity-right-plus').on('click', function () {
+                $('.quantity-right-plus').on('click', function() {
                     const input = $(this).siblings('input');
                     let value = Math.min(parseInt(input.val()) + 1, parseInt(input.attr('max') || 100));
                     input.val(value);
                     updateQuantity($(this).closest('tr'));
                 });
 
-                $('.quantity input').on('change', function () {
+                $('.quantity input').on('change', function() {
                     let val = parseInt($(this).val()) || 1;
                     const min = parseInt($(this).attr('min')) || 1;
                     const max = parseInt($(this).attr('max')) || 100;
@@ -87,15 +90,18 @@
                 });
 
                 // Remove item
-                $('.product-remove a').on('click', function (e) {
+                $('.product-remove a').on('click', function(e) {
                     e.preventDefault();
                     const row = $(this).closest('tr');
                     const key = row.data('key');
 
                     $.post({
                         url: '/cart/remove',
-                        data: { key, _token: csrfToken },
-                        success: function () {
+                        data: {
+                            key,
+                            _token: csrfToken
+                        },
+                        success: function() {
                             row.remove();
                             updateCartTotals();
 
@@ -106,7 +112,7 @@
                                 $('.cart-subtotal, .cart-grand-total').text('₱0.00');
                             }
                         },
-                        error: function () {
+                        error: function() {
                             alert('Failed to remove item from cart.');
                         }
                     });
@@ -121,14 +127,18 @@
 
                 $.post({
                     url: '/cart/update',
-                    data: { key, quantity, _token: csrfToken },
-                    success: function () {
+                    data: {
+                        key,
+                        quantity,
+                        _token: csrfToken
+                    },
+                    success: function() {
                         const price = parseFloat(row.find('.price').text().replace('₱', '')) || 0;
                         const newTotal = price * quantity;
                         row.find('.total').text(`₱${newTotal.toFixed(2)}`);
                         updateCartTotals();
                     },
-                    error: function () {
+                    error: function() {
                         alert('Failed to update quantity.');
                     }
                 });
@@ -137,7 +147,7 @@
             function updateCartTotals() {
                 let subtotal = 0;
 
-                $('#cart-section tbody tr').each(function () {
+                $('#cart-section tbody tr').each(function() {
                     const row = $(this);
                     const price = parseFloat(row.find('.price').text().replace('₱', '')) || 0;
                     const quantity = parseInt(row.find('.quantity input').val()) || 0;

@@ -12,8 +12,11 @@
 </head>
 <nav class="navbar navbar-expand-lg navbar-light ftco_navbar ftco-navbar-light sticky-top" style="background-color: rgba(0, 0, 0, 0.5);" id="ftco-navbar">
     <div class="container">
-        <a class="navbar-brand" href="{{ route('welcome') }}" style="font-weight: bold; color: white;"><img
-                src="img/favicon.png" alt="logo" height="30">{{ config('app.name') }}
+        <a class="navbar-brand" href="{{ route('welcome') }}" style="font-weight: bold; text-decoration: none;"><img
+                src="img/favicon.png" alt="logo" height="30"><span
+                style="color: white; display: inline-block; transition: transform 0.2s;"
+                onmouseover="this.style.transform='scale(1.1)';"
+                onmouseout="this.style.transform='scale(1)';">{{ config('app.name') }}</span>
         </a>
     </div>
 </nav>
