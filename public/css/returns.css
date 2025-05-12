@@ -1,0 +1,66 @@
+ :root {
+ --primary-green: #28a745;
+ --light-green: #d4edda;
+ --dark-green: #218838;
+ }
+
+ body {
+ background-color: #f8f9fa;
+ }
+
+ .green-bg {
+ background-color: var(--primary-green);
+ color: white;
+ }
+
+ .green-btn {
+ background-color: var(--primary-green);
+ border-color: var(--primary-green);
+ color: white;
+ }
+
+ .green-btn:hover {
+ background-color: var(--dark-green);
+ border-color: var(--dark-green);
+ }
+
+ .card-header {
+ background-color: var(--light-green);
+ font-weight: bold;
+ }
+
+ .product-img {
+ max-height: 150px;
+ object-fit: contain;
+ }
+
+ .upload-area {
+ border: 2px dashed #ccc;
+ border-radius: 5px;
+ padding: 20px;
+ text-align: center;
+ cursor: pointer;
+ transition: all 0.3s;
+ }
+
+ .upload-area:hover {
+ border-color: var(--primary-green);
+ background-color: rgba(40, 167, 69, 0.05);
+ }
+
+ .preview-image {
+ max-width: 100%;
+ max-height: 200px;
+ margin-top: 15px;
+ display: none;
+ }
+
+ .reason-select {
+ border-left: 3px solid var(--primary-green);
+ }
+
+ @media (max-width: 768px) {
+ .summary-card {
+ margin-top: 20px;
+ }
+ }

@@ -1,7 +1,7 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-md bg-dark navbar-dark py-3 sticky-top">
     <div class="container">
-        <a href="{{ route('cart') }}" class="navbar-brand" style="font-weight: bold;"><span class="fa-solid fa-user" style="margin-left: 10px;"></span>
+        <a href="{{ route('home') }}" class="navbar-brand" style="font-weight: bold;"><span class="fa-solid fa-user" style="margin-left: 10px;"></span>
             {{ Auth::user()->name }}</a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">

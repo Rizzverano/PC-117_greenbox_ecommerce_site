@@ -45,14 +45,14 @@
                     <div class="row">
                         <div class="col-6">
                             <ul class="list-unstyled">
-                                <li class="mb-2"><a href="{{ route('shippingInfo') }}" class="text-white text-decoration-none small">Shipping Information</a></li>
-                                <li class="mb-2"><a href="{{ route('terms-condition') }}" class="text-white text-decoration-none small">Terms &amp; Condition</a></li>
+                                <li class="mb-2"><a href="{{ route('shippingInfo') }}" class="text-white text-decoration-none small">Shipping Info</a></li>
+                                <li class="mb-2"><a href="{{ route('terms-condition') }}" class="text-white text-decoration-none small">Terms/Condition</a></li>
                                 <li class="mb-2"><a href="{{ route('privacy') }}" class="text-white text-decoration-none small">Privacy Policy</a></li>
                             </ul>
                         </div>
                         <div class="col-6">
                             <ul class="list-unstyled">
-                                <li class="mb-2"><a href="{{ route('returns') }}" class="text-white text-decoration-none small">Returns &amp; Exchange</a></li>
+                                <li class="mb-2"><a href="{{ route('returns') }}" class="text-white text-decoration-none small">Returns/Exchange</a></li>
                                 <li class="mb-2"><a href="{{ route('contact') }}" class="text-white text-decoration-none small">Contact Us</a></li>
                             </ul>
                         </div>
