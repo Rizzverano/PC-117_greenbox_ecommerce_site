@@ -6,6 +6,7 @@ use App\Models\Meat;
 use App\Models\Seafood;
 use App\Models\Vegefruit;
 use App\Models\CartItem;
+use App\Models\Procedure;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -42,6 +43,11 @@ class AppServiceProvider extends ServiceProvider
         View::composer('*', function ($view) {
             $cart = CartItem::all();
             $view->with('cart_items', $cart);
+        });
+
+        View::composer('*', function ($view) {
+            $procedure = Procedure::all();
+            $view->with('procedures', $procedure);
         });
     }
 }

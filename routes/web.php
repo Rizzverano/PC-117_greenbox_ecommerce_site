@@ -22,7 +22,6 @@ Route::get('/', [DashboardController::class, 'index'])
 
 // Authenticated User Routes (role:0)
 Route::middleware(['auth', 'role:0'])->group(function () {
-
     // Dashboard
     Route::get('/home', [DashboardController::class, 'home'])->name('home');
 
@@ -51,4 +50,3 @@ Route::middleware(['auth', 'role:0'])->group(function () {
 // Route::get('/vegefruits/create', function () {
 //     return view('vegefruits.create');
 // });
-

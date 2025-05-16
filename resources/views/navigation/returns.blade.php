@@ -27,7 +27,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-3 text-center">
-                                <img src="https://via.placeholder.com/150" alt="Product Image"
+                                <img src="#" alt="Product Image"
                                     class="img-fluid product-img mb-3">
                             </div>
                             <div class="col-md-9">
@@ -164,10 +164,15 @@
                             Brgy. Eastern Poblacion
                         </address>
                         <p class="text-muted">Include the return label with your package.</p>
-                        <button class="btn btn-outline-success w-100">
-                            <i class="fas fa-receipt me-2"></i>Request Return Label
-                        </button>
+
+                        <div class="form-check" style="margin-top: 10px;">
+                            <input class="form-check-input" type="checkbox" id="Return" value="Return" name="Return">
+                            <label class="form-check-label ms-2" for="Return" style="margin-left: 8px;">
+                                <i class="fas fa-receipt me-2"></i>Request Return Label
+                            </label>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </div>

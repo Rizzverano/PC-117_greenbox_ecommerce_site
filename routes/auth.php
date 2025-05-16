@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 
-
 Route::controller(AuthController::class)->group(function () {
     Route::middleware('guest')->group(function () {
         Route::get('/register', 'register')->name('register');
@@ -15,8 +14,3 @@ Route::controller(AuthController::class)->group(function () {
 
     Route::middleware('auth')->post('/logout', 'logout')->name('logout');
 });
-
-
-
-
-

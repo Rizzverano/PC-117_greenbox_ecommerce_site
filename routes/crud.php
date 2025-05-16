@@ -4,11 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VegefruitController;
 use App\Http\Controllers\MeatController;
 use App\Http\Controllers\SeafoodController;
-
+use App\Http\Controllers\ProcedureController;
 
 // Authenticated & role-based routes
 Route::middleware(['auth', 'role:1,2'])->group(function () {
-
     // Vegefruit routes
     Route::get('/vegefruits', [VegefruitController::class, 'index'])->name('vegefruits.index');
     Route::get('/vegefruits/create', [VegefruitController::class, 'create'])->name('vegefruits.create');
@@ -32,11 +31,36 @@ Route::middleware(['auth', 'role:1,2'])->group(function () {
     Route::get('/seafoods/{seafood}/edit', [SeafoodController::class, 'edit'])->name('seafoods.edit');
     Route::patch('/seafoods/{seafood}', [SeafoodController::class, 'update'])->name('seafoods.update');
     Route::delete('/seafoods/{seafood}', [SeafoodController::class, 'destroy'])->name('seafoods.destroy');
+
+    // Display all procedures
+    Route::get('manager/sections/procedures', [ProcedureController::class, 'index'])->name('manager.sections.procedures');
+
+    // Show form to create a new procedure
+    Route::get('manager/sections/procedures/create', [ProcedureController::class, 'create'])->name('procedures.create');
+
+    // Store a new procedure
+    Route::post('manager/sections/procedures', [ProcedureController::class, 'store'])->name('procedures.store');
+
+    // Show a single procedure
+    Route::get('manager/sections/procedures/{id}', [ProcedureController::class, 'show'])->name('procedures.show');
+
+    // Show form to edit a procedure
+    Route::get('manager/sections/procedures/{id}/edit', [ProcedureController::class, 'edit'])->name('procedures.edit');
+
+    // Update a procedure
+    Route::patch('manager/sections/procedures/{id}', [ProcedureController::class, 'update'])->name('procedures.update');
+
+    // Delete a procedure
+    Route::delete('manager/sections/procedures/{id}', [ProcedureController::class, 'destroy'])->name('procedures.destroy');
 });
 
 // Public "show" routes
-Route::get('/vegefruits/{vegefruit}', [VegefruitController::class, 'show'])->name('vegefruits.show')->middleware('auth');
-Route::get('/meats/{meat}', [MeatController::class, 'show'])->name('meats.show')->middleware('auth');
-Route::get('/seafoods/{seafood}', [SeafoodController::class, 'show'])->name('seafoods.show')->middleware('auth');
-
-
+Route::get('/vegefruits/{vegefruit}', [VegefruitController::class, 'show'])
+    ->name('vegefruits.show')
+    ->middleware('auth');
+Route::get('/meats/{meat}', [MeatController::class, 'show'])
+    ->name('meats.show')
+    ->middleware('auth');
+Route::get('/seafoods/{seafood}', [SeafoodController::class, 'show'])
+    ->name('seafoods.show')
+    ->middleware('auth');

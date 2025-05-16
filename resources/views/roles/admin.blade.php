@@ -49,6 +49,7 @@
         </div>
     </div>
 
+
     <!-- AJAX Content Areas -->
     <div id="account-content" class="content-area"></div>
     <div id="transaction-content" class="content-area"></div>

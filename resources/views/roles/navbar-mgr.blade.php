@@ -1,7 +1,12 @@
     <!-- Top Navigation -->
     <nav class="navbar navbar-expand-lg top-nav">
         <div class="container">
+            @if (auth()->check() && auth()->user()->role_id == 2)
             <h2 class="mb-0"><i class="fa-solid fa-user me-2"></i> {{ Auth::user()->name }} (Manager)</h2>
+            @endif
+            @if (auth()->check() && auth()->user()->role_id == 1)
+            <a href="#" class="text-decoration-none text-light"><h2 class="mb-0"><i class="fa-solid fa-user me-2"></i> {{ Auth::user()->name }} (Manager)</h2></a>
+            @endif
             <form action="{{ route('logout') }}" method="POST" class="d-inline">
                 @csrf
                 @method('POST')

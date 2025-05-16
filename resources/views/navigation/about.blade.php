@@ -20,7 +20,7 @@
                 <div class="about-image" style="background-image: url(img/about.jpg);"></div>
                 <div class="about-content">
                     <div class="about-header">
-                        <h2>Welcome to GreenBox an eCommerce website</h2>
+                        <h2 class="fw-bold">Welcome to GreenBox an eCommerce website</h2>
                     </div>
                     <div class="about-text">
                         <p><i class="fa-solid fa-leaf me-2" style="color: #28a745;"></i>GreenBox is your go-to source for fresh, organic, and ready-to-cook ingredients delivered in

@@ -16,37 +16,33 @@ class RoleController extends Controller
         return view('roles.manager');
     }
 
-    public function loadAdminSection(Request $request)
+    public function loadSection(Request $request, $role)
     {
         $section = $request->input('section');
-
-        $validSections = [
-            'account-content'     => 'account',
-            'transaction-content' => 'transaction',
-        ];
+        $validSections = $this->getValidSections($role);
 
         if (!array_key_exists($section, $validSections)) {
             abort(404);
         }
 
-        return view("admin.sections." . $validSections[$section]);
+        return view($role . '.sections.' . $validSections[$section]);
     }
 
-    public function loadManagerSection(Request $request)
+    private function getValidSections($role)
     {
-        $section = $request->input('section');
-
-        $validSections = [
-            'categories-content' => 'categories',
-            'orders-content'     => 'orders',
-            'procedures-content' => 'procedures',
-            'returns-content'    => 'returns',
+        $sections = [
+            'admin' => [
+                'account-content' => 'account',
+                'transaction-content' => 'transaction',
+            ],
+            'manager' => [
+                'categories-content' => 'categories',
+                'orders-content' => 'orders',
+                'procedures-content' => 'procedures',
+                'returns-content' => 'returns',
+            ],
         ];
 
-        if (!array_key_exists($section, $validSections)) {
-            abort(404);
-        }
-
-        return view("manager.sections." . $validSections[$section]);
+        return $sections[$role] ?? [];
     }
 }

@@ -37,7 +37,7 @@
                                     <div class="col-md-6 mb-3">
                                         <div class="form-group">
                                             <label for="phone" class="form-label">Phone:</label>
-                                            <input type="text" class="form-control border-success" placeholder="Phone no.">
+                                            <input type="number" class="form-control border-success" placeholder="Phone no.">
                                         </div>
                                     </div>
 

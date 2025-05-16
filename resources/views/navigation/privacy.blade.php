@@ -25,7 +25,7 @@
 
                 <!-- Text Content -->
                 <div class="col-md p-4 p-lg-5 bg-white rounded shadow-sm">
-                    <h2>Privacy & Policy</h2>
+                    <h2 class="fw-bold">Privacy & Policy</h2>
                     <p class="text-justify text-dark"><i class="fa-solid fa-shield-halved me-2" style="color: #28a745;"></i>
                         "Your privacy is important to us. Our Privacy Policy explains how we collect, use, protect, and share your personal information when you use our services. By accessing or using our platform, you consent to the practices described in this policy.
                     </p>

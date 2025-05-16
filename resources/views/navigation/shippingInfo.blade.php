@@ -27,7 +27,7 @@
                 <div class="col-md p-4 p-lg-5">
                     <div class="card shadow-sm border-0 p-3 p-md-4 bg-white rounded-3 mb-4">
                         <div class="card-body p-4">
-                            <h2 class="mb-4">Shipping Information</h2>
+                            <h2 class="mb-4 fw-bold">Shipping Information</h2>
                             <p class="fs-5 mb-4">
                                 <i class="fas fa-shipping-fast me-2" style="color: #28a745;"></i>
                                 We are committed to providing accurate and reliable shipping services to ensure your orders are delivered

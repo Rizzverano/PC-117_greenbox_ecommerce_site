@@ -25,7 +25,7 @@
 
                 <!-- Text Content -->
                 <div class="col-md p-4 p-lg-5 bg-white rounded shadow-sm">
-                    <h2 class="mb-4">Terms & Conditions</h2>
+                    <h2 class="mb-4 fw-bold">Terms & Conditions</h2>
                     <p class="text-dark mb-3">
                         "By accessing or using our services, you agree to comply with and be bound by our Terms and Conditions, which outline the rules, guidelines, and responsibilities governing your use of our platform.
                     </p>
